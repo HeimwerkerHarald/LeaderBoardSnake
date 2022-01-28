@@ -23,10 +23,13 @@
 <h1>Snake</h1>
 <button onclick="location.reload()" id="restartGame" class="restart">Restart Game</button>
 <br/>
-<a href="highScore">View Highscore</a>
+<button type="submit" id="viewHighscore" value="viewHighscore">view Highscore</button>
 <br/>
-<label for="usernameInput"> Enter name:</label>
-<input type="text" id="usernameInput" width="100" height="50">
+<form action="/action_page.php">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <input type="submit" value="Submit">
+</form>
 <canvas id="game" width="400" height="400"></canvas>
 <script >
     const canvas = document.getElementById("game");
@@ -198,7 +201,6 @@
                 tailLength++;
                 score++;
             }}}
-
     drawGame();
 </script>
 </body>
