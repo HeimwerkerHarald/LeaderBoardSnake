@@ -23,7 +23,7 @@
 <h1>Snake</h1>
 <button onclick="location.reload()" id="restartGame" class="restart">Restart Game</button>
 <br/>
-<button type="submit" id="viewHighscore" value="viewHighscore">view Highscore</button>
+<button type="button" id="viewHighscore">view Highscore</button>
 <br/>
 <form>
     <label for="username">Username:</label><br>
