@@ -25,7 +25,7 @@
 <br/>
 <button type="submit" id="viewHighscore" value="viewHighscore">view Highscore</button>
 <br/>
-<form action="/action_page.php">
+<form>
     <label for="username">Username:</label><br>
     <input type="text" id="username" name="username"><br>
     <input type="submit" value="Submit">
