@@ -15,7 +15,6 @@
 
         canvas{
             box-shadow: black 20px 10px 50px;
-
         }
     </style>
 </head>
@@ -23,13 +22,6 @@
 <h1>Snake</h1>
 <button onclick="location.reload()" id="restartGame" class="restart">Restart Game</button>
 <br/>
-<button type="button" id="viewHighscore">view Highscore</button>
-<br/>
-<form>
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <input type="submit" value="Submit">
-</form>
 <canvas id="game" width="400" height="400"></canvas>
 <script >
     const canvas = document.getElementById("game");
@@ -62,8 +54,6 @@
 
     let score = 0;
     let highScore = 0;
-    let usernameInput = document.getElementById("usernameInput");
-    usernameInput.style.visibility = "hidden";
     let restartButton = document.getElementById("restartGame");
     restartButton.style.visibility = "hidden";
 
@@ -116,6 +106,15 @@
             ctx.font = "50px Verdana";
 
             ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
+
+            var check = prompt('Geben Sie Ihren Namen ein:', '');
+            if ( check.toString().length !== 0) {
+                var http = new XMLHttpRequest();
+                http.open('POST', 'highScore?highscore=' + score + '&username=' + check, true);
+                http.onload = function () {
+                }
+                http.send();
+            }
         }
         return gameOver;
     }
