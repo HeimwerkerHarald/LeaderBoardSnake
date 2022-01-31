@@ -19,10 +19,12 @@
     </style>
 </head>
 <body>
+<hr/>
 <h1>Snake</h1>
 <button onclick="location.reload()" id="restartGame" class="restart">Restart Game</button>
 <br/>
 <canvas id="game" width="400" height="400"></canvas>
+<h1><img style="font-size: 14px; display: block; margin-left: auto; margin-right: auto;" src="https://www.novomind.com/typo3conf/ext/extension-kwi/Resources/Public/Frontend/Img/novomind/og_novomind_Logo_1800_1080.png" alt="Intelligente Softwarel&ouml;sungen f&uuml;r Commerce und Customer Service - novomind  AG" width="244" height="147"/></h1>
 <script >
     const canvas = document.getElementById("game");
     const ctx = canvas.getContext("2d");

@@ -190,5 +190,12 @@ public class HelloServlet extends HttpServlet {
         Highscore highscore = highscoreMapper.readValue(new File("C:\\Users\\hvanrooyen\\IdeaProjects\\demo\\demo\\LeaderBoardSnake\\src\\main\\webapp\\package.json"), Highscore.class);
 
         PrintWriter out = resp.getWriter();
+        out.println(
+                "<hr />\n" +
+                "<h1><img style=\"font-size: 14px; display: block; margin-left: auto; margin-right: auto;\" src=\"https://www.novomind.com/typo3conf/ext/extension-kwi/Resources/Public/Frontend/Img/novomind/og_novomind_Logo_1800_1080.png\" alt=\"Intelligente Softwarel&ouml;sungen f&uuml;r Commerce und Customer Service - novomind  AG\" width=\"244\" height=\"147\" /></h1>\n" +
+                "<h2 style=\"text-align: center;\">Snake Leaderboard</h2>\n" +
+                "<p>&nbsp;</p>" + "<br>" +
+                "<h3 align=center id=h3>" + highscore.getName1() + "&nbsp" + highscore.getFirst() + "</h3>" +
+                "<hr />\n");
     }
 }
