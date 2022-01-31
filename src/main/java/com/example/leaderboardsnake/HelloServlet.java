@@ -161,7 +161,6 @@ public class HelloServlet extends HttpServlet {
     public ObjectMapper objectMapper = new ObjectMapper();
     private Highscore highscore;
 
-    @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         String username = req.getParameter("username");
@@ -181,21 +180,29 @@ public class HelloServlet extends HttpServlet {
 
     }
 
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
         resp.setContentType("text/html");
 
         ObjectMapper highscoreMapper = new ObjectMapper();
         Highscore highscore = highscoreMapper.readValue(new File("C:\\Users\\hvanrooyen\\IdeaProjects\\demo\\demo\\LeaderBoardSnake\\src\\main\\webapp\\package.json"), Highscore.class);
 
         PrintWriter out = resp.getWriter();
-        out.println(
-                "<hr />\n" +
-                "<h1><img style=\"font-size: 14px; display: block; margin-left: auto; margin-right: auto;\" src=\"https://www.novomind.com/typo3conf/ext/extension-kwi/Resources/Public/Frontend/Img/novomind/og_novomind_Logo_1800_1080.png\" alt=\"Intelligente Softwarel&ouml;sungen f&uuml;r Commerce und Customer Service - novomind  AG\" width=\"244\" height=\"147\" /></h1>\n" +
+        out.println("<html>" +
+                "<head>" +
+                "</head>" +
+                "<body>" +
+                "<h1><img style=\"font-size: 14px; display: block; margin-left: auto; margin-right: auto;\" src=\"https://www.novomind.com/typo3temp/assets/_processed_/3/3/csm_Novomind_Logo_de15ab5689.png\" alt=\"Intelligente Softwarel&ouml;sungen f&uuml;r Commerce und Customer Service - novomind  AG\" width=\"244\" height=\"147\" /></h1>\n" +
                 "<h2 style=\"text-align: center;\">Snake Leaderboard</h2>\n" +
                 "<p>&nbsp;</p>" + "<br>" +
-                "<h3 align=center id=h3>" + highscore.getName1() + "&nbsp" + highscore.getFirst() + "</h3>" +
-                "<hr />\n");
+                "<h3 align=center id=h3>" + highscore.getName1() + ":" + "&nbsp" + highscore.getFirst() + "pts" + "</h3>" +
+                "<h3 align=center id=h3>" + highscore.getName2() + ":" + "&nbsp" + highscore.getSecond() + "pts" + "</h3>" +
+                "<h3 align=center id=h3>" + highscore.getName3() + ":" + "&nbsp" + highscore.getThird() + "pts" +"</h3>" +
+                "<h3 align=center id=h3>" + highscore.getName4() + ":" + "&nbsp" + highscore.getFourth() + "pts" + "</h3>" +
+                "<h3 align=center id=h3>" + highscore.getName5() + ":" + "&nbsp" + highscore.getFifth() + "pts" + "</h3>" +
+                "<style>" +
+                "body{ background-image: url(https://img.wallpapersafari.com/desktop/1024/576/63/12/1DwZcX.png); background-repeat: no-repeat; background-size: 100% 100%; margin: 0; padding: 0; display: flex; flex-direction: column; justify-content: center; align-items: center;}" +
+                "</style>" +
+                "</body>" +
+                "</html>");
     }
 }
